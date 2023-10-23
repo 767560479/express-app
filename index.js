@@ -4,7 +4,7 @@
  * @Date: 2023-10-23 22:23:36
  * @FilePath: \express-app\index.js
  * @LastEditors: zhengfei.tan
- * @LastEditTime: 2023-10-23 22:42:16
+ * @LastEditTime: 2023-10-23 23:36:40
  */
 const express = require('express')
 const app = express()
@@ -21,11 +21,12 @@ app.get('/', (req, res) => {
 
 // 定义定时任务
 function job() {
-  console.log('定时任务执行，执行一些操作...');
+  // 输出当前格式化后的时间（yyyy-MM-dd）
+  console.log('定时任务执行，执行一些操作,当前时间为：', new Date().toLocaleString());
  }
 
-// 创建一个定时任务，每隔 5 秒执行一次 job 函数
-schedule.scheduleJob('*/5 * * * * *', job);
+// 创建一个定时任务，每隔 1小时 执行一次 job 函数
+schedule.scheduleJob('*/1 * * * *', job);
 
 
 app.listen(3000, () => {
