@@ -4,7 +4,7 @@
  * @Date: 2023-10-23 22:23:36
  * @FilePath: \express-app\index.js
  * @LastEditors: zhengfei.tan
- * @LastEditTime: 2023-10-23 23:44:52
+ * @LastEditTime: 2024-06-23 14:49:44
  */
 const express = require('express')
 const app = express()
@@ -18,7 +18,6 @@ app.use('/test', testRouter)
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
-
 
 
 // 定义定时任务
